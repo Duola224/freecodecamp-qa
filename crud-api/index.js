@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const productRoute = require('./routes/product.route.js');
+const studentRoute = require('./routes/student.route.js');
 
 const app = express()
 
@@ -10,7 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 
-app.use('/api/products', productRoute);
+app.use('/products', productRoute);
+app.use('/students', studentRoute);
 
 app.get('/', (req, resp) => resp.send('Welcome to my crup-api project from FCC!'));
 
